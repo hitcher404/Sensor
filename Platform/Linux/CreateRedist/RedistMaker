@@ -7,7 +7,7 @@ function calc_jobs_number() {
 	if [ $OS_TYPE == "Darwin" ] ; then
 		N_CORES=$(sysctl -n hw.physicalcpu)
 	else
-		N_CORES=$(grep "processor\W:" /proc/cpuinfo | wc -l)
+		N_CORES=1
 	fi
 	echo $((N_CORES*2))
 }
